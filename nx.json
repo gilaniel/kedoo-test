@@ -14,18 +14,7 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.gitlab-ci.yml"]
   },
-<<<<<<< HEAD
   "neverConnectToCloud": true,
-=======
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "nx/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
-    }
-  },
->>>>>>> d20692d (add content)
   "plugins": [
     {
       "plugin": "@nx/next/plugin",
