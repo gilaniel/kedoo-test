@@ -1,0 +1,443 @@
+.background {
+  --color-main: #b99653;
+
+  --color-tr1: #4a3919;
+
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0909;
+
+  --tr-size: calc(3vw + 3vh);
+}
+
+.background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(ellipse at center, var(--color-main) 0%, #0a090900 100%);
+  opacity: 0;
+  animation: background-fill var(--a-t-bg-fill) ease-out var(--a-t-init-idle) forwards;
+}
+
+@keyframes background-fill {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.3;
+  }
+}
+
+.container {
+  --a-t-tr-start-delay: var(--a-t-bg-await);
+  --a-t-tr-end-delay: var(--a-t-disappear-delay);
+  --a-t-tr-start: calc(var(--a-t-disappear-delay) - var(--a-t-bg-await));
+  --a-t-tr-end: var(--a-t-appear-main-logo);
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.tr1 {
+  position: absolute;
+  width: calc(var(--tr-size) * 4);
+  height: calc(var(--tr-size) * 2);
+  filter: blur(1.5px);
+  opacity: 0.4;
+}
+
+.tr1::before,
+.tr1::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.tr1::before {
+  translate: 0% 3%;
+  background-image: linear-gradient(135deg, black, var(--color-main));
+}
+
+.tr1::after {
+  background-image: linear-gradient(135deg, var(--color-tr1), black);
+}
+
+.container .tr1:nth-child(1) {
+  left: 52vw;
+  top: -20vh;
+  --start-t: translate(-50%, -50%) rotate(90deg) scale(0.8);
+  --mid-t: translate(-50%, calc(21vh - 50%)) rotate(-25deg) scale(0.8);
+  --end-t: translate(-50%, calc(20vh - 50%)) rotate(-15deg) scale(0.8);
+}
+
+
+.container .tr1:nth-child(2) {
+  left: 130vw;
+  top: 20vh;
+  --start-t: translate(-50%, -50%) rotate(270deg) scale(0.8);
+  --mid-t: translate(calc(-35vw - 50%), calc(4vh - 50%)) rotate(220deg) scale(0.8);
+  --end-t: translate(calc(-30vw - 50%), -50%) rotate(177deg) scale(0.8);
+}
+
+.container .tr1:nth-child(3) {
+  left: 130vw;
+  top: 55vh;
+  --start-t: translate(-50%, -50%) rotate(-10deg);
+  --mid-t: translate(calc(-35vw - 50%), calc(2vh - 50%)) rotate(50deg);
+  --end-t: translate(calc(-30vw - 50%), -50%) rotate(80deg);
+}
+
+.container .tr1:nth-child(4) {
+  left: 75vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(10deg);
+  --mid-t: translate(calc(10vw - 50%), calc(-38vh - 50%)) rotate(50deg);
+  --end-t: translate(calc(06vw - 50%), calc(-34vh - 50%)) rotate(80deg);
+}
+
+.container .tr1:nth-child(5) {
+  left: 30vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(0deg) scale(0.9);
+  --mid-t: translate(calc(22vw - 50%), calc(-32vh - 50%)) rotate(170deg) scale(0.9);
+  --end-t: translate(calc(20vw - 50%), calc(-30vh - 35%)) rotate(135deg) scale(0.9);
+}
+
+.container .tr1:nth-child(6) {
+  left: 20vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(10deg);
+  --mid-t: translate(calc(2vw - 50%), calc(-45vh - 50%)) rotate(-25deg);
+  --end-t: translate(calc(5vw - 50%), calc(-37vh - 75%)) rotate(-30deg);
+}
+
+.container .tr1:nth-child(7) {
+  left: -30vw;
+  top: 80vh;
+  --start-t: translate(-50%, -50%) rotate(-120deg);
+  --mid-t: translate(calc(40vw - 50%), calc(-12vh - 50%)) rotate(-70deg);
+  --end-t: translate(calc(32vw - 50%), calc(-5vh - 50%)) rotate(-40deg);
+}
+
+.container .tr1:nth-child(8) {
+  left: -30vw;
+  top: 10vh;
+  --start-t: translate(-50%, -50%) rotate(-30deg);
+  --mid-t: translate(calc(31vw - 50%), calc(8vh - 50%)) rotate(-10deg);
+  --end-t: translate(calc(35vw - 25%), calc(2vh - 75%)) rotate(50deg);
+}
+
+.container .tr1:nth-child(9) {
+  opacity: 0.1;
+  filter: blur(3px);
+  left: 70vw;
+  top: -30vh;
+  --start-t: translate(-50%, -50%) rotate(-40deg) scale(0.8);
+  --mid-t: translate(calc(-12vw - 50%), calc(46vh - 50%)) rotate(-47deg) scale(0.8);
+  --end-t: translate(calc(-6vw - 50%), calc(55vh - 80%)) rotate(-23deg) scale(0.8);
+}
+
+.container .tr1:nth-child(10) {
+  opacity: 0.1;
+  filter: blur(3px);
+  left: -30vw;
+  top: 39vh;
+  --start-t: translate(-50%, -50%) rotate(23deg) scale(0.8);
+  --mid-t: translate(calc(53vw - 50%), calc(1vh - 50%)) rotate(31deg) scale(0.8);
+  --end-t: translate(calc(55vw - 75%), calc(-4vh - 50%)) rotate(14deg) scale(0.8);
+}
+
+.tr2 {
+  position: absolute;
+  width: calc(var(--tr-size) * 3);
+  height: calc(var(--tr-size) * 0.8660254 * 2.4);
+  transform-origin: calc(var(--tr-size) * 3 * 0.5) calc(var(--tr-size) * 0.8660254 * 2.4 * 0.66666);
+  opacity: 0.4;
+  filter: brightness(1.5) blur(6px);
+  z-index: -1;
+}
+
+.tr2::before,
+.tr2::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.tr2::before {
+  translate: 0% 3%;
+  background-image: linear-gradient(var(--color-main), black 120%);
+}
+
+.tr2::after {
+  background-image: linear-gradient(var(--color-main), black 120%);
+}
+
+.container .tr2:nth-child(11) {
+  left: 70vw;
+  top: -30vh;
+  --start-t: translate(-50%, -50%) rotate(25deg);
+  --mid-t: translate(calc(-4vw - 50%), calc(34vh - 50%)) rotate(125deg);
+  --end-t: translate(calc(2vw - 75%), calc(31vh - 75%)) rotate(95deg);
+}
+
+.container .tr2:nth-child(12) {
+  left: 130vw;
+  top: -30vh;
+  --start-t: translate(-50%, -50%) rotate(460deg) scale(0.8);
+  --mid-t: translate(calc(-37vw - 50%), calc(30vh - 50%)) rotate(175deg) scale(0.8);
+  --end-t: translate(calc(-35vw - 75%), calc(31vh - 50%)) rotate(225deg) scale(0.8);
+}
+
+.container .tr2:nth-child(13) {
+  left: 130vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(-40deg) scale(0.8);
+  --mid-t: translate(calc(-33vw - 50%), calc(-40vh - 50%)) rotate(-90deg) scale(0.8);
+  --end-t: translate(calc(-42vw - 50%), calc(-45vh - 80%)) rotate(-51deg) scale(0.8);
+}
+
+.container .tr2:nth-child(14) {
+  left: 68vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(36deg) scale(0.6);
+  --mid-t: translate(calc(-3vw - 50%), calc(-37vh - 50%)) rotate(34deg) scale(0.6);
+  --end-t: translate(calc(-2vw - 50%), calc(-33vh - 80%)) rotate(30deg) scale(0.6);
+}
+
+.container .tr2:nth-child(15) {
+  left: 35vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(0deg) scale(0.8);
+  --mid-t: translate(calc(-3vw - 50%), calc(-37vh - 50%)) rotate(48deg) scale(0.8);
+  --end-t: translate(calc(1vw - 50%), calc(-30vh - 50%)) rotate(20deg) scale(0.8);
+}
+
+.container .tr2:nth-child(16) {
+  left: -30vw;
+  top: 30vh;
+  --start-t: translate(-50%, -50%) rotate(120deg) scale(0.8);
+  --mid-t: translate(calc(33vw - 50%), calc(2vh - 50%)) rotate(118deg) scale(0.8);
+  --end-t: translate(calc(31vw - 50%), calc(-4vh - 50%)) rotate(120deg) scale(0.8);
+}
+
+.container .tr2:nth-child(17) {
+  left: -30vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(180deg) scale(0.8);
+  --mid-t: translate(calc(36vw - 50%), calc(-38vh - 50%)) rotate(190deg) scale(0.8);
+  --end-t: translate(calc(33vw - 50%), calc(-36vh - 50%)) rotate(160deg) scale(0.8);
+}
+
+.container .tr2:nth-child(18) {
+  opacity: 0.2;
+  left: 30vw;
+  top: -30vh;
+  --start-t: translate(-50%, -50%) rotate(250deg) scale(0.6);
+  --mid-t: translate(calc(6vw - 50%), calc(32vh - 50%)) rotate(210deg) scale(0.6);
+  --end-t: translate(calc(8vw - 50%), calc(34vh - 50%)) rotate(190deg) scale(0.6);
+}
+
+.tr3 {
+  position: absolute;
+  width: calc(var(--tr-size) * 4);
+  height: calc(var(--tr-size) * 2);
+  transform-origin: calc(var(--tr-size) * 4 * 0.5) calc(var(--tr-size) * 2 * 0.5);
+  filter: blur(1.5px);
+  opacity: 0.4;
+}
+
+.tr3::before,
+.tr3::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.tr3::before {
+  translate: 0% 3%;
+  background-image: linear-gradient(-90deg, var(--color-main), black 120%);
+}
+
+.tr3::after {
+  background-image: linear-gradient(90deg, var(--color-main), black 120%);
+}
+
+.container .tr3:nth-child(19) {
+  left: -30vw;
+  top: 55vh;
+  --start-t: translate(-50%, -50%) rotate(220deg) scale(1.4);
+  --mid-t: translate(calc(33vw - 50%), calc(2vh - 50%)) rotate(180deg) scale(1.4);
+  --end-t: translate(calc(38vw - 100%), calc(7vh - 50%)) rotate(164deg) scale(1.4);
+}
+
+.container .tr3:nth-child(20) {
+  left: 74vw;
+  top: -30vh;
+  --start-t: translate(-50%, -50%) rotate(120deg) scale(1.2);
+  --mid-t: translate(calc(5vw - 50%), calc(34vh - 50%)) rotate(100deg) scale(1.2);
+  --end-t: translate(calc(9vw - 50%), calc(34vh - 75%)) rotate(95deg) scale(1.2);
+}
+
+.container .tr3:nth-child(21) {
+  left: 15vw;
+  top: -30vh;
+  --start-t: translate(-50%, -50%) rotate(120deg) scale(1.2);
+  --mid-t: translate(calc(5vw - 50%), calc(39vh - 50%)) rotate(155deg) scale(1.2);
+  --end-t: translate(calc(9vw - 50%), calc(37vh - 75%)) rotate(180deg) scale(1.2);
+}
+
+.tr4 {
+  position: absolute;
+  width: calc(var(--tr-size) * 2);
+  height: calc(var(--tr-size) * 0.8660254 * 1.6);
+  transform-origin: calc(var(--tr-size) * 2 * 0.5) calc(var(--tr-size) * 0.8660254 * 1.6 * 0.66666);
+  opacity: 0.1;
+  filter: brightness(1.5) blur(9px);
+  z-index: -1;
+}
+
+.tr4::before,
+.tr4::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.tr4::before {
+  translate: 0% 3%;
+  background-image: linear-gradient(var(--color-main), black 120%);
+}
+
+.tr4::after {
+  background-image: linear-gradient(var(--color-main), black 120%);
+}
+
+.container .tr4:nth-child(22) {
+  left: 20vw;
+  top: -30vh;
+  --start-t: translate(-50%, -50%) rotate(140deg);
+  --mid-t: translate(calc(5vw - 50%), calc(47vh - 50%)) rotate(175deg);
+  --end-t: translate(calc(9vw - 50%), calc(49vh - 50%)) rotate(155deg);
+}
+
+.container .tr4:nth-child(23) {
+  left: 130vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(25deg) scale(1.2);
+  --mid-t: translate(calc(-28vw - 50%), calc(-38vh - 50%)) rotate(-20deg) scale(1.2);
+  --end-t: translate(calc(-35vw - 50%), calc(-33vh - 80%)) rotate(-40deg) scale(1.2);
+}
+
+.container .tr4:nth-child(24) {
+  left: 55vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(-270deg) scale(0.8);
+  --mid-t: translate(calc(7vw - 50%), calc(-43vh - 50%)) rotate(-60deg) scale(0.8);
+  --end-t: translate(calc(11vw - 100%), calc(-55vh - 50%)) rotate(-30deg) scale(0.8);
+}
+
+.container .tr4:nth-child(25) {
+  left: 25vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(-2deg) scale(0.7);
+  --mid-t: translate(calc(9vw - 50%), calc(-45vh - 50%)) scale(0.7);
+  --end-t: translate(calc(12vw - 50%), calc(-49vh - 75%)) rotate(25deg) scale(0.7);
+}
+
+.container .tr4:nth-child(26) {
+  left: -30vw;
+  top: 130vh;
+  --start-t: translate(-50%, -50%) rotate(40deg) scale(0.9);
+  --mid-t: translate(calc(45vw - 50%), calc(-45vh - 50%)) rotate(55deg) scale(0.9);
+  --end-t: translate(calc(51vw - 50%), calc(-56vh - 75%)) rotate(45deg) scale(0.9);
+}
+
+.container .tr4:nth-child(27) {
+  left: 130vw;
+  top: 76vh;
+  --start-t: translate(-50%, -50%) rotate(-115deg) scale(0.8);
+  --mid-t: translate(calc(-41vw - 50%), calc(-3vh - 50%)) rotate(-125deg) scale(0.8);
+  --end-t: translate(calc(-49vw - 50%), calc(-10vh - 80%)) rotate(-105deg) scale(0.8);
+}
+
+.container .tr4:nth-child(28) {
+  left: 130vw;
+  top: 41vh;
+  --start-t: translate(-50%, -50%) rotate(-93deg) scale(1.4);
+  --mid-t: translate(calc(-33vw - 50%), calc(-3vh - 50%)) rotate(-104deg) scale(1.4);
+  --end-t: translate(calc(-47vw - 50%), calc(-10vh - 80%)) rotate(-113deg) scale(1.4);
+}
+
+.container .tr1,
+.container .tr2,
+.container .tr3,
+.container .tr4 {
+  --f-t: translate(calc(var(--f-t-x)), calc(var(--f-t-y))) rotate(var(--f-t-a));
+  inset: var(--end-i);
+  transform: var(--end-t);
+  animation:
+    float var(--f-t-t) ease-in-out calc(var(--a-t-tr-end) + var(--a-t-tr-end-delay)) infinite;
+}
+
+.startAnimation.container .tr1,
+.startAnimation.container .tr2,
+.startAnimation.container .tr3,
+.startAnimation.container .tr4 {
+  transform: var(--start-t);
+  animation:
+    tr-start var(--a-t-tr-start) ease-out var(--a-t-tr-start-delay) forwards,
+    tr-end var(--a-t-tr-end) ease-in-out var(--a-t-tr-end-delay) forwards,
+    float var(--f-t-t) ease-in-out calc(var(--a-t-tr-end) + var(--a-t-tr-end-delay)) infinite;
+}
+
+@keyframes tr-start {
+  from {
+    transform: var(--start-t);
+  }
+
+  to {
+    transform: var(--mid-t);
+  }
+}
+
+@keyframes tr-end {
+  from {
+    transform: var(--mid-t);
+  }
+
+  to {
+    transform: var(--end-t);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: var(--end-t);
+  }
+
+  50% {
+    transform: var(--end-t) var(--f-t);
+  }
+
+  100% {
+    transform: var(--end-t);
+  }
+}

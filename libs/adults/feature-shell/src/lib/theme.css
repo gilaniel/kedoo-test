@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+[data-theme='adults'] {
+  --kedoo-brand-gold: #b99653;
+  --kedoo-brand-white: #fff;
+  --kedoo-opacity-blue-10: rgba(63, 81, 181, 0.1);
+  --kedoo-opacity-gold-10: rgba(185, 150, 83, 0.1);
+  --kedoo-opacity-white-10: rgba(255, 255, 255, 0.1);
+  --kedoo-grey-01: #f5f5f5;
+  --kedoo-grey-02: #ececec;
+  --kedoo-grey-03: #8d92a2;
+  --kedoo-black-01: #101010;
+  --kedoo-black-02: #2b2b2b;
+  --kedoo-button-hover: #a87b25;
+  --kedoo-button-pressed: #8e5e00;
+  --kedoo-text-color-primary: #121319;
+  --kedoo-text-color-secondary: #8d92a2;
+  --kedoo-text-color-disabled: #b1b5c3;
+  --kedoo-text-color-white: #fff;
+
+  --font-family: 'Lato', sans-serif;
+  --second-family: 'Aktiv Grotesk Corp', sans-serif;
+  --third-family: 'Inter', sans-serif;
+  --font3: 'Roboto', sans-serif;
+}
+
+[data-theme='adults'] body {
+  font-family: 'Lato';
+  /* @apply bg-white;
+  color: var(--kedoo-text-color-primary); */
+}
+
+[data-theme='adults'] h1,
+[data-theme='adults'] h2,
+[data-theme='adults'] h3 {
+  @apply font-medium;
+}

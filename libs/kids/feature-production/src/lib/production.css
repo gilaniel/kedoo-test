@@ -1,0 +1,123 @@
+.kids-production-top-bg {
+  object-position: top;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  min-width: 2560px;
+  top: 80px !important;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.kids-shows-baloon {
+  @apply absolute z-[11] w-[137px] h-[200px] top-[-123px] left-[-54px] lg:w-[402px] lg:h-[587px] 2xl:top-[-380px] lg:top-[-420px] lg:left-[-100px] md:w-[205px] md:h-[300px] md:top-[-207px] md:left-[-100px];
+  transition: left 1s ease, top 1s ease, width 1s ease, height 1s ease;
+}
+
+.kids-shows-kedoosy {
+  @apply absolute z-[11] w-[163px] h-[150px] right-[-62px] top-[21px] lg:w-[417px] lg:h-[383px] lg:top-[60px] lg:right-[-110px] md:w-[270px] md:h-[248px] md:top-[10px] md:right-[-90px];
+  transition: right 1s ease, top 1s ease, width 1s ease, height 1s ease;
+}
+
+.kids-bottom-bg {
+  height: 330px;
+  object-fit: cover;
+  object-position: -150px top;
+}
+
+.kids-bottom-trianles {
+  @apply absolute w-[187px] h-[138px] right-[-80px] bottom-[160px] lg:w-[280px] lg:h-[207px] z-[3] md:right-[0] md:bottom-[110px] xl:bottom-[60px];
+}
+
+.kids-studios-cards {
+  @apply w-auto justify-center md:justify-start md:w-[690px] lg:w-[932px];
+}
+
+.swiper-slide {
+  position: relative;
+  width: auto;
+  display: flex;
+}
+
+@media screen and (min-width: 320px) {
+  .kids-production-top-bg {
+    top: 0 !important;
+  }
+}
+
+@media screen and (min-width: 610px) {
+  .kids-bottom-bg {
+    object-position: center top;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .kids-production-top-bg {
+    top: 40px !important;
+  }
+
+  .kids-bottom-bg {
+    object-position: -300px top;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .kids-production-top-bg {
+    top: 80px !important;
+  }
+}
+
+@media screen and (min-width: 1112px) {
+  .kids-bottom-bg {
+    object-position: center top;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .kids-bottom-bg {
+    object-position: -170px bottom;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .kids-studios-cards {
+    width: auto;
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .kids-shows-baloon {
+    top: -380px;
+    left: 0;
+  }
+
+  .kids-shows-kedoosy {
+    top: 60px;
+    right: 0;
+  }
+
+  .kids-bottom-trianles {
+    right: 50px;
+    bottom: 90px;
+  }
+
+  .kids-bottom-bg {
+    object-position: left;
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .kids-shows-baloon {
+    top: -360px;
+    left: 102px;
+  }
+
+  .kids-shows-kedoosy {
+    top: 80px;
+    right: 255px;
+  }
+
+  .kids-bottom-trianles {
+    right: 285px;
+    bottom: 113px;
+  }
+}

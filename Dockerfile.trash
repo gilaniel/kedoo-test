@@ -1,0 +1,73 @@
+# ------------------------------------------------
+# BASE
+# ------------------------------------------------
+FROM node:18-alpine AS base
+
+
+# ------------------------------------------------
+# DEPENDS BASE
+# ------------------------------------------------
+FROM base AS depends_base
+
+RUN apk add --no-cache --virtual .gyp python3 make g++
+
+
+# ------------------------------------------------
+# DEPENDENCIES
+# ------------------------------------------------
+FROM depends_base AS depends
+
+USER node
+WORKDIR /app
+
+COPY --chown=node .yarn ./.yarn
+COPY --chown=node package.json yarn.lock .yarnrc.yml ./
+
+RUN yarn install --immutable
+
+
+# ------------------------------------------------
+# BUILD
+# ------------------------------------------------
+FROM base AS build
+
+USER node
+WORKDIR /app
+
+COPY --chown=node --from=depends /app/node_modules ./node_modules
+COPY --chown=node . ./
+
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN yarn nx run landing:build
+
+
+# ------------------------------------------------
+# RUNNER
+# ------------------------------------------------
+FROM base AS runner
+
+WORKDIR /app
+
+ENV NODE_ENV production
+ENV NEXT_TELEMETRY_DISABLED 1
+
+RUN addgroup --system --gid 1001 nodejs && \
+    adduser --system --uid 1001 nextjs
+
+RUN mkdir .next
+RUN chown nextjs:nodejs .next
+    
+COPY --from=build --chown=nextjs:nodejs /app/apps/landing/.next/standalone ./
+COPY --from=build --chown=nextjs:nodejs /app/apps/landing/.next/static ./apps/landing/.next/static
+COPY --from=build --chown=nextjs:nodejs /app/apps/landing/public ./public
+
+USER nextjs
+
+EXPOSE 3000
+
+ENV PORT 3000
+ENV HOSTNAME "0.0.0.0"
+
+CMD ["node", "apps/landing/server.js"]
+    

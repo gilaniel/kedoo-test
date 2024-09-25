@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@kedoo/adults/feature-audience": ["libs/adults/feature-audience/src/index.ts"],
+      "@kedoo/adults/feature-contacts": ["libs/adults/feature-contacts/src/index.ts"],
+      "@kedoo/adults/feature-distribution": ["libs/adults/feature-distribution/src/index.ts"],
+      "@kedoo/adults/feature-main": ["libs/adults/feature-main/src/index.ts"],
+      "@kedoo/adults/feature-production": ["libs/adults/feature-production/src/index.ts"],
+      "@kedoo/adults/feature-shell": ["libs/adults/feature-shell/src/index.ts"],
+      "@kedoo/adults/ui-components": ["libs/adults/ui-components/src/index.ts"],
+      "@kedoo/kids/feature-distribution": ["libs/kids/feature-distribution/src/index.ts"],
+      "@kedoo/kids/feature-main": ["libs/kids/feature-main/src/index.ts"],
+      "@kedoo/kids/feature-merch": ["libs/kids/feature-merch/src/index.ts"],
+      "@kedoo/kids/feature-production": ["libs/kids/feature-production/src/index.ts"],
+      "@kedoo/kids/feature-shell": ["libs/kids/feature-shell/src/index.ts"],
+      "@kedoo/kids/ui-components": ["libs/kids/ui-components/src/index.ts"],
+      "@kedoo/shared/data-access": ["libs/shared/data-access/src/index.ts"],
+      "@kedoo/shared/ui-components": ["libs/shared/ui-components/src/index.ts"],
+      "@kedoo/shared/ui-shadcn": ["libs/shared/ui-shadcn/src/index.ts"],
+      "@kedoo/shared/utils-interfaces": ["libs/shared/utils-interfaces/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

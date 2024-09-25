@@ -1,0 +1,24 @@
+{
+  "singleQuote": true,
+  "printWidth": 100,
+  "importOrder": [
+    "^react(-dom/?(.*))?$",
+    
+    "^(react-router-dom|react-hook-form)$",
+    "^(yup|@hookform/.*)$",
+
+    "^(lodash|date-fns|axios)(.*)$",
+
+    "<THIRD_PARTY_MODULES>",
+
+    "^@kedoo/shared/(.*)$",
+    "^@kedoo/(.*)$",
+
+    "^../(.*)$",
+
+    "^./(.*)$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"]
+}

@@ -1,0 +1,247 @@
+.kids-channel-item {
+  @apply w-[425px] h-[240px] rounded-[40px] bg-white mx-[5px];
+}
+
+.kids-channel-item.empty {
+  @apply p-5;
+}
+
+.kids-channel-item.empty > div {
+  @apply rounded-[20px] bg-[--kedoo-opacity-blue-10] h-full;
+  border: 1px dashed var(--kids-button-hover);
+}
+
+.swiper-slide {
+  position: relative;
+  width: auto;
+  display: flex;
+}
+
+.kids-channels-swiper {
+  height: 290px;
+}
+
+.kids-channels-swiper .swiper-pagination {
+  @apply max-w-[1160px] bottom-0;
+}
+
+.kids-channels-swiper .swiper-pagination-bullet {
+  @apply bg-transparent w-8 h-8 relative opacity-[1] transition-colors cursor-pointer;
+  margin: 0 !important;
+}
+
+.kids-channels-swiper .swiper-pagination-bullet:hover {
+  @apply bg-[--kedoo-opacity-blue-10];
+}
+
+.kids-channels-swiper .swiper-pagination-bullet:before {
+  @apply absolute left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%] w-[10px] h-[10px] rounded-full bg-[--kids-text-color-secondary];
+  content: '';
+}
+
+.kids-channels-swiper .swiper-pagination-bullet:hover:before {
+  @apply bg-[--kids-button-hover];
+}
+
+.kids-channels-swiper .swiper-pagination-bullet-active:before {
+  @apply bg-[--kids-button-active];
+}
+
+.kids-channels-swiper .swiper-pagination-bullet-active:hover:before {
+  @apply bg-[--kids-button-active];
+}
+
+.kids-channel-video {
+  @apply relative w-full overflow-hidden rounded-none mb-[10px] text-white mt-5 xl:rounded-[40px] min-h-[400px] md:min-h-[auto];
+  aspect-ratio: 16/9;
+}
+
+.kids-channel-video:before {
+  @apply absolute z-[2] top-0 left-0 w-full h-full;
+  content: '';
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.kids-channel-video video {
+  width: 100%;
+}
+
+.kids-catalog-bg {
+  @apply absolute top-0 left-1/2 translate-x-[-50%] bg-[--kids-pic-sand] h-full w-[2560px];
+}
+
+.kids-catalog-sun {
+  @apply absolute right-[-37px] top-[-75px] w-[159px] h-[200px] md:right-[-20px] md:top-[-42px] lg:top-[5px] xl:w-[313px] xl:h-[397px] xl:top-[-140px];
+  transition: right 0.5s ease, top 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.kids-catalog-tri {
+  @apply absolute left-[-50px] top-[-50px] w-[200px] h-[148px] md:left-[-10px];
+  transition: left 0.5s ease, top 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.kids-catalog-bot-line {
+  @apply w-full left-0 md:w-[2560px] md:left-1/2 md:translate-x-[-50%];
+}
+
+.kids-catalog-bot-line.pink {
+  clip-path: url(#catalogPinkLineXs);
+}
+
+.kids-catalog-bot-line.blue {
+  @apply top-[30px] md:top-[50px];
+  clip-path: url(#catalogBlueLineXs);
+}
+
+.kids-catalog-bot-line.yellow {
+  @apply top-[90px] md:top-[120px];
+  clip-path: url(#catalogYellowLineXs);
+}
+
+.kids-catalog-cup {
+  @apply absolute top-[-95px] left-[-50px] z-[2] w-[194px] h-[147px] md:w-[280px] md:h-[214px] md:left-0 md:top-[-123px] lg:left-[40px] lg:top-[-148px];
+  transition: left 0.5s ease, top 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.kids-catalog-bot-tri {
+  @apply absolute z-[4] w-[410px] h-[294px] min-w-[410px] right-[-210px] top-[-140px] md:right-[-170px] md:top-[-160px] xl:right-[-120px] xl:top-[-160px];
+  transition: right 0.5s ease, top 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.kids-catalog-kedoosy {
+  @apply absolute z-[4] w-[202px] h-[186px] top-[120px] right-[-20px] md:w-[399px] md:h-[356px] md:top-[110px] md:right-[-110px];
+  transition: right 0.5s ease, top 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.kids-partners-bg {
+  @apply absolute top-0 left-1/2 translate-x-[-50%] bg-white w-[2560px] h-full;
+  clip-path: url(#teamBgXs);
+}
+
+.kids-partners-baloon {
+  @apply absolute left-[-50px] top-[-125px] w-[112px] h-[165px] md:w-[200px] md:h-[345px] md:top-[-240px] lg:w-[300px] lg:h-[465px] lg:top-[-275px] lg:left-[-115px];
+  transition: left 0.5s ease, top 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.kids-partners-subtitle {
+  @apply text-[24px] leading-[142%] px-5 text-center md:text-[40px] md:leading-[110%] mb-5;
+  font-family: var(--kids-second-family);
+}
+
+@media screen and (min-width: 768px) {
+  .kids-catalog-bot-line.pink {
+    clip-path: url(#catalogPinkLine);
+  }
+
+  .kids-catalog-bot-line.blue {
+    clip-path: url(#catalogBlueLine);
+  }
+
+  .kids-catalog-bot-line.yellow {
+    clip-path: url(#catalogYellowLine);
+  }
+
+  .kids-partners-subtitle {
+    font-family: var(--kids-third-family);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .kids-partners-bg {
+    clip-path: url(#teamBg);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .kids-catalog-sun {
+    @apply top-[-125px] w-[313px] h-[397px];
+  }
+
+  .kids-catalog-tri {
+    @apply top-[-110px] left-[-40px] w-[414px] h-[308px];
+  }
+
+  .kids-catalog-cup {
+    @apply left-[40px] top-[-148px];
+  }
+
+  .kids-catalog-bot-tri {
+    @apply right-0 top-[-170px];
+  }
+
+  .kids-catalog-kedoosy {
+    @apply right-[50px];
+  }
+}
+
+@media screen and (min-width: 1750px) {
+  .kids-catalog-sun {
+    @apply top-[-90px];
+  }
+
+  .kids-catalog-cup {
+    @apply left-[40px] top-[-140px];
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .kids-catalog-sun {
+    @apply top-[-40px];
+  }
+
+  .kids-catalog-tri {
+    @apply top-[-50px] left-0;
+  }
+
+  .kids-catalog-cup {
+    @apply left-[88px] top-[-110px];
+  }
+
+  .kids-catalog-bot-tri {
+    @apply right-[60px] top-[-90px];
+  }
+
+  .kids-catalog-kedoosy {
+    @apply right-[260px] top-[150px];
+  }
+
+  .kids-partners-baloon {
+    @apply left-0 top-[-480px] w-[401px] h-[587px];
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .kids-catalog-bg,
+  .kids-catalog-bot-line,
+  .kids-partners-bg {
+    @apply w-full;
+  }
+}
+
+.kids-parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  line-height: 0.8;
+  margin: 0 0 20px 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.kids-parallax .scroller {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 64px;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.team-img-container {
+  border-radius: 58%;
+  width: 120px;
+  min-width: 120px;
+  height: 120px;
+  overflow: hidden;
+}

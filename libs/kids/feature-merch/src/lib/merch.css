@@ -1,0 +1,86 @@
+.kids-merch-product-container {
+  @apply min-h-[auto] lg:min-h-[700px];
+}
+
+.kids-merch-product-card {
+  @apply h-[335px] md:h-[650px] rounded-[40px] bg-white overflow-hidden relative flex lg:h-auto;
+}
+
+.kids-merch-product-card:before {
+  @apply absolute left-0 top-0 z-[1] w-full h-full;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgb(0 0 0 / 20%) 100%);
+  content: '';
+}
+
+.kids-first-merch img {
+  object-position: top;
+}
+
+.kids-merch-bg,
+.kids-merch-bot-bg {
+  @apply absolute h-[300px] top-0 w-[2560px] bg-[--kids-text-color-primary] left-1/2 translate-x-[-50%];
+}
+
+.kids-merch-bot-bg {
+  @apply top-[inherit] bottom-0;
+}
+
+.kids-merch-sun {
+  @apply top-[-80px] right-[-45px] absolute z-[1] w-[160px] h-[200px] md:right-[-10px] md:top-[-8px] xl:w-[313px] xl:h-[398px] xl:top-[-185px];
+  transition: right 0.5s ease, top 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.kids-merch-tri {
+  @apply top-[-100px] left-[-40px] absolute z-[1] w-[200px] h-[148px] md:left-0 xl:w-[413px] xl:h-[307px] xl:top-[-185px];
+  transition: left 0.5s ease, top 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+
+.kids-merch-planes {
+  @apply hidden bottom-[-100px] left-[30px] absolute z-[1] md:block md:bottom-[-110px] md:left-[-50px] xl:left-[40px] xl:bottom-[-120px] 2xl:bottom-[-100px] 2xl:left-[30px];
+  transition: left 1s ease, bottom 1s ease;
+}
+
+.kids-merch-partners-bg-top {
+  @apply absolute z-[1] h-[557px] left-1/2 top-0 w-[2560px] bg-white translate-x-[-50%];
+}
+
+.kids-merch-partners-bg-bot {
+  @apply absolute z-[2] h-[381px] left-1/2 top-[350px] w-[2560px] bg-[--kids-pic-lime] translate-x-[-50%];
+}
+
+.kids-merch-partners-wind {
+  @apply absolute z-[2] w-[355px] h-[156px] bottom-[130px] left-1/2 translate-x-[-50%] md:w-[680px] md:h-[298px];
+}
+
+@media screen and (min-width: 620px) {
+  .kids-merch-partners-wind {
+    bottom: 70px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .kids-merch-partners-wind {
+    bottom: -80px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .kids-merch-product-container {
+    height: calc(100vh - 400px);
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .kids-merch-tri {
+    @apply top-[-245px];
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .kids-merch-bg,
+  .kids-merch-bot-bg,
+  .kids-merch-partners-bg-top,
+  .kids-merch-partners-bg-bot {
+    width: 100%;
+  }
+}

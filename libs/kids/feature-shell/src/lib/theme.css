@@ -1,0 +1,225 @@
+@font-face {
+  font-family: 'Kiddosy';
+  src: local('Kiddosy'), url('./fonts/Kiddosy.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Sniglet';
+  src: local('Sniglet'), url('./fonts/Sniglet.otf') format('opentype');
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+[data-theme='kids'] {
+  --font-family: 'Lato', sans-serif;
+  --font3: 'Roboto', sans-serif;
+  --font4: 'Kiddosy Free', sans-serif;
+  --font5: 'Ubuntu', sans-serif;
+  --font6: 'Arial', sans-serif;
+  --font7: 'Montserrat', sans-serif;
+  --brand-gold: #b99653;
+  --brand-white: #fff;
+  --text-color-black: #121319;
+  --text-color-white: #fff;
+  --text-color-secondary: #8d92a2;
+  --text-color-disabled: #b1b5c3;
+  --gold-hover: #a87b25;
+  --gold-pressed: #8e5e00;
+  --gold-10: rgba(185, 150, 83, 0.1);
+  --black-01: #101010;
+  --black-02: #2b2b2b;
+  --grey-01: #f5f5f5;
+  --grey-02: #ececec;
+  --grey-03: #8d92a2;
+  --white-10: rgba(255, 255, 255, 0.1);
+
+  --blue-10: rgba(63, 81, 181, 0.1);
+
+  --kedoo-brand-gold: #b99653;
+  --kedoo-brand-white: #fff;
+  --kedoo-opacity-blue-10: rgba(63, 81, 181, 0.1);
+  --kedoo-opacity-gold-10: rgba(185, 150, 83, 0.1);
+  --kedoo-opacity-white-10: rgba(255, 255, 255, 0.1);
+  --kedoo-grey-01: #f5f5f5;
+  --kedoo-grey-02: #ececec;
+  --kedoo-grey-03: #8d92a2;
+  --kedoo-black-01: #101010;
+  --kedoo-black-02: #2b2b2b;
+  --kedoo-button-hover: #a87b25;
+  --kedoo-button-pressed: #8e5e00;
+  --kedoo-text-color-primary: #121319;
+  --kedoo-text-color-secondary: #8d92a2;
+  --kedoo-text-color-disabled: #b1b5c3;
+  --kedoo-text-color-white: #fff;
+
+  min-height: 100%;
+  font-family: var(--kids-third-family);
+  font-weight: 400;
+  font-size: 14px;
+  background: var(--kids-blue);
+  color: var(--kids-text-color-blue);
+}
+
+.font-kedoosy {
+  font-family: var(--kids-third-family);
+}
+
+.font-sniglet {
+  font-family: var(--kids-second-family);
+}
+.kids-container {
+  @apply max-w-[100%] px-5 md:px-10 lg:px-[140px] mx-auto;
+}
+
+.kids-nav-link {
+  @apply uppercase text-[24px] leading-[125%] font-kedoosy;
+  transition: color 0.3s ease;
+}
+
+.kids-nav-link.active {
+  @apply text-white;
+}
+
+.kids-nav-link:hover {
+  color: white;
+}
+
+.kids-menu-group {
+  cursor: pointer;
+}
+
+.kids-menu-group:hover .kids-nav-link {
+  color: white;
+}
+
+.kids-menu-group svg {
+  transform: rotate(0);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.kids-menu-group:hover svg {
+  @apply text-white;
+  transform: rotate(180deg);
+}
+
+.kids-menu-dropdown {
+  @apply absolute left-0 w-[150px] font-sniglet bg-white rounded-[10px] kids-drop-shadow overflow-hidden opacity-0 invisible;
+  top: calc(100% + 5px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease, top 0.3s ease;
+}
+
+.kids-menu-group:hover .kids-menu-dropdown {
+  @apply opacity-[1] visible;
+  top: 100%;
+  pointer-events: unset;
+}
+
+.kids-dropdown-link {
+  @apply text-[14px] leading-[143%] py-[5px] w-full px-[10px] font-sniglet block;
+  color: var(--kids-text-color-primary);
+  transition: all 0.2s ease;
+}
+
+.kids-dropdown-link:hover {
+  color: var(--kids-button-active);
+  background: var(--kids-background-card);
+}
+
+.kids-menu-btn:hover {
+  color: var(--kids-text-color-primary) !important;
+}
+
+.kids-drop-shadow {
+  box-shadow: var(--kids-drop-shadow);
+}
+
+.kids-caret-transition {
+  transition: fill 0.3s ease, transform 0.3s ease;
+}
+
+.kids-sheet-group-title {
+  @apply text-[32px] leading-[119%] font-kedoosy;
+}
+
+.kids-sheet-group {
+  @apply flex flex-col ml-5 gap-5 text-[24px] leading-[142%];
+}
+
+.kids-logo {
+  @apply w-[69px] h-[57px] md:w-[92px] md:h-[77px];
+}
+
+.kids-text-blue {
+  color: var(--kids-text-color-blue);
+}
+
+.kids-h1 {
+  @apply text-[56px] leading-[62px] md:text-[100px] md:leading-[110px] font-kedoosy;
+  color: var(--kids-text-color-blue);
+  transition: font-size 0.3s ease;
+}
+
+.kids-h2 {
+  @apply text-[50px] leading-[56px] md:text-[80px] md:leading-[88px];
+  transition: font-size 0.3s ease;
+}
+
+.kids-h3 {
+  @apply text-[40px] leading-[44px] font-kedoosy;
+  transition: font-size 0.3s ease;
+}
+
+.kids-subtitle {
+  @apply text-[24px] leading-[145%] max-w-[680px] font-sniglet;
+}
+
+.kids-tabs-item {
+  @apply rounded-[20px] p-[10px] text-[24px] uppercase leading-[125%] data-[state=active]:text-white data-[state=active]:bg-[var(--kids-button-active)] data-[state=active]:border-[var(--kids-button-active)];
+  color: var(--kids-text-color-primary);
+  border: 1px solid var(--kedoo-opacity-blue-10);
+}
+
+.kids-tabs-item-active {
+  color: red;
+}
+
+.kids-card {
+  @apply w-[335px] rounded-[40px] overflow-hidden;
+  background: var(--kids-background-card);
+}
+
+.kids-card-content {
+  @apply p-5 font-sniglet text-[16px];
+  color: var(--kids-text-color-primary);
+  height: calc(100% - 190px);
+}
+
+.kids-btn {
+  @apply rounded-[40px] px-4 py-3 text-[20px] leading-[150%] text-white font-kedoosy border-[1px] border-transparent tracking-[0.4px];
+  background: var(--kids-button-active);
+}
+
+.kids-btn-outline {
+  @apply bg-white text-[--kids-button-active] border-[--kids-button-active];
+}
+
+.kids-btn-outline:hover {
+  @apply border-transparent text-white;
+}
+
+.kids-btn.big {
+  @apply px-7 py-5;
+}
+
+.kids-btn:hover {
+  background: var(--kids-button-hover);
+}
+
+.kids-btn:active {
+  background: var(--kids-button-pressed);
+}

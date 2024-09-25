@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 47.4% 11.2%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 47.4% 11.2%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+
+    --kids-second-family: 'Sniglet', sans-serif;
+    --kids-third-family: 'Kiddosy', sans-serif;
+    --kids-text-color-primary: #3f51b5;
+    --kids-text-color-secondary: #9fa8da;
+    --kids-text-color-disabled: #d5d7e3;
+    --kids-background-main: #c2edff;
+    --kids-background-card: #e9ebf5;
+    --kids-brand-blue: #3bc0fa;
+    --kids-brand-red: #ff5c70;
+    --kids-brand-yellow: #ffc400;
+    --kids-button-active: #fa4a85;
+    --kids-button-hover: #5f27ff;
+    --kids-button-pressed: #3a00de;
+    --kids-button-disabled: #d5d7e3;
+    --kids-pic-lime: #37da3e;
+    --kids-pic-sand: #fffceb;
+    --kids-pic-pink: #f64da8;
+    --kids-pic-purple-dark: #4010c5;
+    --kids-pic-purple-light: #5f27ff;
+    --kids-pic-blue-dark: #1814c3;
+    --kids-pic-blue-light: #4556f2;
+    --kids-pic-orange: #ff856a;
+    --kids-pic-green-light: #b9e164;
+    --kids-text-color-blue: #3f51b5;
+    --kids-drop-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
+    --kids-blue: #c2edff;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+
+    --muted: 223 47% 11%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+
+    --accent: 216 34% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 215 20.2% 65.1%;
+
+    --border: 216 34% 17%;
+    --input: 216 34% 17%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 1.2%;
+
+    --secondary: 222.2 47.4% 11.2%;
+    --secondary-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 216 34% 17%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+}
+
+:root {
+  --a-t-init-idle: 100ms;
+  --a-t-bg-fill: 400ms;
+  --a-t-logo-spin: 2000ms;
+  --a-t-letter-fall-delay: 75ms;
+  --a-t-initial-logo-stay: 1000ms;
+  --a-t-appear-main-logo: 2000ms;
+  --a-t-bg-await: calc(var(--a-t-init-idle) + var(--a-t-bg-fill));
+  --a-t-disappear-delay: calc(
+    var(--a-t-bg-await) + var(--a-t-logo-spin) + var(--a-t-letter-fall-delay) * 6 +
+      var(--a-t-initial-logo-stay)
+  );
+  --a-t-appear-main-logo-delay: calc(var(--a-t-bg-await) + var(--a-t-disappear-delay) + 200ms);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

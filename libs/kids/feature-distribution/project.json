@@ -1,0 +1,9 @@
+{
+  "name": "kids-feature-distribution",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/kids/feature-distribution/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project kids-feature-distribution --web",
+  "targets": {}
+}

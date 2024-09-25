@@ -1,0 +1,9 @@
+{
+  "name": "adults-feature-main",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/adults/feature-main/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project adults-feature-main --web",
+  "targets": {}
+}
